@@ -1,0 +1,25 @@
+{
+    "data_path": "data/dw_specific", 
+    "share": "att", 
+    "ep": 200, 
+    "enc": "attdense", 
+    "spad": 30, 
+    "languages": [
+        "english", "german"
+    ], 
+    "store_test": false, 
+    "test": false, 
+    "ddim": 100, 
+    "wdim": 40, 
+    "swpad": 30, 
+    "train": true, 
+    "bs": 16, 
+    "target": "english", 
+    "wordemb_path": "word_vectors/", 
+    "sdim": 100, 
+    "t": 0.2, 
+    "act": "relu", 
+    "wpad": 900, 
+    "ep_size": 100,
+    "seed": 1234
+}

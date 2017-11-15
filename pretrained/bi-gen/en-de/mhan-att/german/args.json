@@ -1,0 +1,22 @@
+{
+    "data_path": "data/dw_general", 
+    "share": "att", 
+    "ep": 300, 
+    "enc": "attdense", 
+    "spad": 30, 
+    "languages": [
+        "english", "german"
+    ], 
+    "ddim": 100, 
+    "wdim": 40, 
+    "swpad": 30, 
+    "bs": 16, 
+    "target": "german", 
+    "wordemb_path": "word_vectors/", 
+    "sdim": 100, 
+    "t": 0.4, 
+    "act": "relu", 
+    "wpad": 900, 
+    "ep_size": 100,
+    "seed": 1234
+}

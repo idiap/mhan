@@ -1,0 +1,223 @@
+/*#    Copyright (c) 2017 Idiap Research Institute, http://www.idiap.ch/
+#    Written by Nikolaos Pappas <nikolaos.pappas@idiap.ch>,
+#
+#    This file is part of mhan.
+#
+#    mhan is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License version 3 as
+#    published by the Free Software Foundation.
+#
+#    mhan is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with mhan. If not, see http://www.gnu.org/licenses/
+*/
+
+body {
+  font-family: Arial;
+  background-color: #eee;
+}
+.bs-callout-info {
+  background-color: #f4f8fa;
+  border-color: #bce8f1;
+  }
+
+.bs-callout {
+  margin: 20px 0;
+  padding: 5px 12px 5px 12px;
+  border-left: 3px solid #eee;
+  }
+
+.bs-callout-info {
+  background-color: #f4f8fa;
+  border-color: #bce8f1;
+  font-size:14px;
+  }
+
+
+.bs-callout-info h4 {
+  color: #3a87ad;
+  font-size:16px;
+  }
+
+.list-group-item-heading {
+  font-size:16px !important;
+}
+
+#footer{
+  color:#777777;
+  font-size:12px;
+  margin-top:-10px;
+  margin-bottom:10px;
+}
+
+.col-md-4{
+  width:110px;
+  background-color: green
+  font-size:16px;
+}
+.row-centered {text-align:center;}
+.col-centered { display:inline-block; float:none; margin-right:-4px;}
+
+.imgs-l {
+  width:130px;
+  float:left;
+  margin-top:-15px;
+}
+.imgs-r {
+  width:130px;
+  float:right;
+  margin-top:-15px;
+}
+
+.col-md-8{
+  float:center;
+  width:1100px;
+  text-align:left;
+  background:white;
+  border-radius: 10px;
+  padding-top:30px;
+  margin-top:-20px;
+}
+.text_panel{
+  overflow-x:none;
+  overflow-y:scroll;
+  max-height:500px;
+  height:350px;
+  padding-left:10px;
+  overflow-x:none;
+}
+
+.list-group{
+  font-size:13px;
+}
+
+.alert{
+  padding:7px;
+}
+
+#content{
+  margin-top:15px;
+  padding-top:20px;
+}
+
+.page-header{
+  height:70px;
+  padding-left:20px
+
+}
+
+.page-header h1{
+  margin-top:8px;
+}
+
+.lead{
+  margin-top:-5px;
+}
+
+#loading {
+  position:absolute;
+  left:49%;
+  top:39%;
+}
+
+.colorcol {
+  width:20px;
+  padding:3px;
+  font-size:10px;
+  color:#444;
+}
+
+.sentcol{
+  padding:3px;
+  border-left:2px solid #666;
+}
+
+.list-group{
+    max-height:550px;
+    overflow-y: scroll;
+    margin-top:10px
+}
+
+.list-group-item{
+    padding:3px !important;
+}
+.inv{
+  display:none;
+}
+
+.list-group-item-action {
+  cursor:pointer;
+}
+
+
+.dropdown-menu{
+  text-align: left !important;
+}
+.container{
+  margin-left:0px;
+}
+.btn-group-container{
+  width:375px;
+}
+
+.btn {
+  font-size:10px;
+}
+
+.progtab
+{
+  width:12%;
+  vertical-align:top;
+  text-align:right;
+  padding-right:10px;
+}
+
+.progress{
+  margin-bottom:5px;
+}
+
+.progopt{
+  cursor:pointer;
+}
+
+h4 {
+  font-weight:bold
+}
+
+.words {
+	padding:5px;
+	background:cyan;
+}
+
+.tag {
+	padding:5px;
+	margin-top:2px;
+	background:#eee;
+	border-radius: 5px;
+	font-size:12px;
+	width:120px;
+}
+
+.langs_container{
+  margin-left:10px;
+  max-height:230px;
+  overflow-y:scroll;
+}
+
+.sentcol {
+  max-width:800px;
+  overflow-x: none;
+}
+
+#current_table{
+	width:900px;
+}
+
+#langs{
+  text-align:left;
+  vertical-align:top;
+}

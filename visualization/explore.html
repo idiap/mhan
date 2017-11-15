@@ -1,0 +1,152 @@
+<!--
+#    Copyright (c) 2017 Idiap Research Institute, http://www.idiap.ch/
+#    Written by Nikolaos Pappas <nikolaos.pappas@idiap.ch>,
+#
+#    This file is part of mhan.
+#
+#    mhan is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License version 3 as
+#    published by the Free Software Foundation.
+#
+#    mhan is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with mhan. If not, see http://www.gnu.org/licenses/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Multilingual document tagging visualization</title>
+    <link href="lib/bootstrap.css" rel="stylesheet">
+    <link href="lib/demo.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.9.0rc1.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script src="lib/explore.js"></script>
+  </head>
+
+  <body>
+      <img id="loading" src="loading.gif" style="width:40px">
+      <center>
+        <div id="content" style="display:none;">
+        <div class=" row-centered">
+        <div class="col-md-8  col-centered">
+          <a href="http://idiap.ch" target="_blank"><img src="idiap.jpg" class="imgs-l"></a>
+          <a href="http://summa-project.eu/" target="_blank"><img src="summa.jpg" class="imgs-r"></a>
+            <center>
+  	          <span onclick="window.location.href='index.html'" style="cursor:pointer">
+                    <h2 style="margin-top:-10px"><b>Multilingual document tagging visualization</b></h2>
+              </span>
+            </center>
+
+            <div id="explore" style="display:;margin-top:20px">
+            <table id="reviews" cellpadding=0 celspacing=0>
+              <tr>
+                <td style="vertical-align:top">
+                  <div class="btn-group">
+                       <button type="button" class="btn btn-default"  id="selected_type"></button>
+                       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                         <span class="caret" style="padding:1px"></span>
+                       </button>
+                       <ul class="dropdown-menu" role="menu" id="dropdown">
+                       </ul>
+                      </div>
+
+	                   <div class="list-group" id="group_1"></div>
+              </td>
+            <td style="vertical-align:top;">
+              <center class="text_panel">
+                <table cellpadding=0 cellspacing=0 id="current_table" >
+                <tr>
+                </tr>
+              </table>
+              </center>
+              <div class="langs_container">
+                <table id="langs">
+                		<tr>
+                		<td>
+                        <div class="radio" id="english_radio-div">
+                            <label><input type="radio" name="optradio" id="english_radio" onclick="activate('english')"><b>English</b></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio" id="german_radio-div">
+                            <label><input type="radio" name="optradio" id="german_radio" onclick="activate('german')"><b>German</b></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio" id="spanish_radio-div">
+                            <label><input type="radio" name="optradio" id="spanish_radio"  onclick="activate('spanish')"><b>Spanish</b></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio" id="portuguese_radio-div">
+                            <label><input type="radio" name="optradio" id="portuguese_radio"  onclick="activate('portuguese')"><b>Portuguese</b></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio" id="russian_radio-div">
+                            <label><input type="radio" name="optradio" id="russian_radio" onclick="activate('russian')"><b>Russian</b></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio" id="ukrainian_radio-div">
+                            <label><input type="radio" name="optradio" id="ukrainian_radio" onclick="activate('ukrainian')"><b>Ukrainian</b></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio" id="arabic_radio-div" >
+                            <label><input type="radio" name="optradio" id="arabic_radio" onclick="activate('arabic')"><b>Arabic</b></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio" id="persian_radio-div">
+                            <label><input type="radio" name="optradio" id="persian_radio" onclick="activate('persian')"><b>Persian</b></label>
+                        </div>
+                    </td>
+                		</tr>
+                		<tr>
+                		<td id="english" style="vertical-align:top">
+                		</td>
+                		<td id="german" style="vertical-align:top">
+                		</td>
+                		<td id="spanish" style="vertical-align:top">
+                		</td>
+                		<td id="portuguese" style="vertical-align:top">
+                		</td>
+                		<td id="russian" style="vertical-align:top">
+                		</td>
+                		<td id="ukrainian" style="vertical-align:top">
+                		</td>
+                		<td id="arabic" style="vertical-align:top">
+                		</td>
+                		<td id="persian" style="vertical-align:top">
+                		</td>
+                		</tr>
+                		</table>
+                </td>
+                </tr>
+                </table>
+              </div>
+              <center id="footer">
+                Natural Language Understanding group, Idiap Research Institute, 2017.
+              </center>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    </center>
+  </div>
+   </body>
+
+</html>
