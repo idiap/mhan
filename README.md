@@ -353,7 +353,7 @@ To train the model from scratch using the same configuration (args.json) and ini
 $ rm  pretrained/bi-spe/multi/en-de/mhan-att/english/*_[1-9]*-* 
 $ python run.py --path pretrained/bi-spe/multi/en-de/mhan-att --train
 ``` 
-For instance, when running the above command with Keras==2.0.8, Theano==0.9.0, numpy==1.13.3, CUDA v8.0.44 and cuDNN 5110 it leads to an  f-score of 0.46339 on the English test set. 
+For instance, when running the above command with Keras==2.0.8, Theano==0.9.0, numpy==1.13.3, CUDA v8.0.44 and cuDNN 5110 it leads to an  f-score of 0.46339 on the English test set. For those who are interested, we also provide upon request the configurations and initial weights of all the other models (including baselines). 
 
 Visualization tool
 -------------
