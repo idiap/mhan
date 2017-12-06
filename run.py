@@ -17,9 +17,12 @@
 
 import os, sys
 import numpy as np
-import argparse, json
+import argparse, json, keras
 from models import MHAN
-from keras.utils import plot_model
+if keras.__version__[0] == "1":
+    from keras.utils.visualize_util import plot as plot_model
+else:
+    from keras.utils import plot_model
 from util import load_data, load_word_vectors, pick_best, export
 
 if __name__ == "__main__":

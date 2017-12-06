@@ -17,6 +17,7 @@
 
 import os
 import sys
+import keras
 import pickle
 import json, gzip
 import numpy as np
@@ -62,7 +63,10 @@ def load_vectors(wvec, labels, x_idxs, y_idxs, wpad, spad):
 			x_vec = np.vstack([x_vec,szeros])
 		else:
 			x_vec = x_vec[:total,:]
-		y_cats =  np.sum(to_categorical(y_idxs[idx], num_classes=len(labels)),axis=0)
+		if keras.__version__[0] == '1':
+			y_cats =  np.sum(to_categorical(y_idxs[idx], nb_classes=len(labels)), axis=0)
+		else:
+			y_cats =  np.sum(to_categorical(y_idxs[idx], num_classes=len(labels)), axis=0)
 		y_cats[y_cats>1] = 1
 		X_vecs.append(x_vec)
 		Y_labels.append(y_cats)
