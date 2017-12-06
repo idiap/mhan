@@ -16,13 +16,16 @@
 #    along with mhan. If not, see http://www.gnu.org/licenses/
 import os, sys
 import numpy as np
-import time, theano, json
+import time, theano, json, keras
 from util import load_vectors
 from keras import backend as K
 from keras.models import Sequential, Model
 from keras.layers.core import Lambda, Reshape
-from keras.layers.merge import Multiply, Concatenate
-from keras.layers import Input, TimeDistributed, Dense, GRU, merge
+if keras.__version__[0] == '1':
+    from keras.layers import Merge
+else:
+    from keras.layers.merge import Multiply, Concatenate
+from keras.layers import Input, TimeDistributed, Dense, GRU
 from keras.layers import Permute, RepeatVector, Flatten, Activation
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
@@ -142,7 +145,10 @@ class MHAN:
 		weights = attention['flatten_word_after'](weights)
 		weights = attention['repeat_word'](weights)
 		weights = attention['permute_word'](weights)
-		return Multiply()([weights, forward_words])
+		if keras.__version__[0] == '1': 
+		    return Merge([weights,forward_words], mode='mul')
+		else:
+		    return Multiply()([weights, forward_words])
 
 	def sentence_attention(self, forward_doc, attention):
 		""" Compute sentence-level attention scores and return attented
@@ -155,7 +161,10 @@ class MHAN:
 		sent_weights = attention['softmax_sent'](submaxed)
 		sent_weights = attention['repeat_sent'](sent_weights)
 		sent_weights = attention['permute_sent'](sent_weights)
-		return Multiply()([sent_weights, forward_doc])
+		if keras.__version__[0] == '1': 
+		    return Merge([sent_weights,forward_doc], mode='mul')
+		else:
+		    return Multiply()([sent_weights, forward_doc])
 
 	def wordpool(self, encoded_words):
 		""" Compose a sentence representation given the encoded word
@@ -199,14 +208,20 @@ class MHAN:
 			words = Input(shape=(self.args['wpad'],self.args['wdim'],))
 			forward_words = encoders['sent_enc'](words)
 			backward_words = encoders['backsent_enc'](words)
-			bigru_words = Concatenate()([forward_words, backward_words])
+			if keras.__version__[0] == '1':
+				bigru_words = Merge([forward_words, backward_words], mode='concat', concat_axis=1)
+			else:
+				bigru_words = Concatenate()([forward_words, backward_words])
 			if self.args['enc'] == "attbigru":
 				bigru_words = self.word_attention(bigru_words, attention)
 			word_pooling = Lambda(self.wordpool, output_shape=self.wordpool_output)
 			sentences = word_pooling(bigru_words)
 			forward_sentences = encoders['doc_enc'](sentences)
 			backward_sentences = encoders['backdoc_enc'](sentences)
-			bigru_sentences = Concatenate()([forward_sentences, backward_sentences])
+			if keras.__version__[0] == '1':
+				bigru_sentences = Merge([forward_sentences, backward_sentences], mode='concat', concat_axis=1)
+			else:
+				bigru_sentences = Concatenate()([forward_sentences, backward_sentences])
 			if self.args['enc'] == "attbigru":
 				bigru_sentences = self.sentence_attention(bigru_sentences, attention)
 			sentence_pooling = Lambda(self.sentencepool, output_shape=self.sentencepool_output)
