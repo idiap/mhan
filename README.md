@@ -24,8 +24,8 @@ to the following links: http://www.python.org/getit/ and http://www.pip-installe
 
 Next, you should be able to install the following packages: <br />
 ```
-$ pip install gzip, h5py, pickle
-$ pip install scipy, numpy
+$ pip install gzip, h5py, pickle, pydot-ng
+$ pip install scipy, numpy, sklearn
 $ pip install nltk==3.2
 $ pip install Theano==0.8.2
 $ pip install keras==1.2.2
