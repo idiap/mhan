@@ -279,7 +279,7 @@ class MHAN:
 		errors, prs, recs, fs = [], [], [], []
 		val_scores, train_scores = [], []
 		if args['seed'] is not None:
-			np.random.seed(args['seed'])
+			np.random.seed(self.args['seed'])
 		for e in range(self.args['ep']):
 			if resume_epoch > 1 and e < resume_epoch:
 				continue
