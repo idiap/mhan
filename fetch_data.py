@@ -45,21 +45,21 @@ def extract_wordids(keywords, lang, vocab):
 
 def get_label_counts(y_idxs, lang):
 	""" Counts the label occurrences in a given set. """
-    h = {}
-    for y in y_idxs:
-        for yy in y:
-            key = "_".join([str(yyy) for yyy in yy])
-            if key not in h:
-                h[key] = 1
-            else:
-                h[key] += 1
-    return h
+	h = {}
+	for y in y_idxs:
+		for yy in y:
+    			key = "_".join([str(yyy) for yyy in yy])
+    			if key not in h:
+				h[key] = 1
+    			else:
+				h[key] += 1
+	return h
 
 def fetch_data(urls, lang, vocab, ltype):
 	""" Fetches and pre-processes the specified URLs given 
 	    the provided vocabulary. """
 	X, Y, skipped = [], [], 0
-	for i, url in enumerate(urls[:5]):
+	for i, url in enumerate(urls[:]):
 		title, teaser, body = "", "", ""
 		sys.stdout.write("\t%s (%d/%d)\r" % (lang, i+1, len(urls)) )
 		sys.stdout.flush()
