@@ -366,7 +366,7 @@ The hierarchical attention networks have the nice property of attending to the r
 
 ### Loading the files obtained with --store_test argument
 To display the stored results of a particular model you have to follow the steps below:
-1. Use the --store_test option to store the predictions and attention scores of a model on the general or specific categories of a given language. Note that the file should have the following format <modelname>_<lang>.json e.g. monokw-de_german.json, monokw-de_engish.json
+1. Use the --store_test option to store the predictions and attention scores of a model on the general or specific categories of a given language. Note that the stored file should have the following naming format: \<modelname\>_\<lang\>.json e.g. monokw-de_german.json, monokw-de_engish.json
 2. Move the above files under the visualization/ folder.
 3. Edit visualization/lib/explore.js to add the name and description of the visualization to fnames hash, the keys of which should have the <modelname> of the model to be loaded (as in 1st step above), as follows:
 ```bash
