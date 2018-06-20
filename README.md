@@ -366,15 +366,15 @@ The hierarchical attention networks have the nice property of attending to the r
 
 ### Loading the files obtained with --store_test argument
 To display the stored results of a particular model you have to follow the steps below:
-1. Use the --store_test option to store the predictions and attention scores of a model on the general or specific categories of a given language e.g. monokw-de_german.json, monokw-de_engish.json
+1. Use the --store_test option to store the predictions and attention scores of a model on the general or specific categories of a given language. Note that the file should have the following format <modelname>_<lang>.json e.g. monokw-de_german.json, monokw-de_engish.json
 2. Move the above files under the visualization/ folder.
-3. Edit visualization/lib/explore.js to add the name and description of the visualization to fnames hash, as follows:
+3. Edit visualization/lib/explore.js to add the name and description of the visualization to fnames hash, the keys of which should have the <modelname> of the model to be loaded (as in 1st step above), as follows:
 ```bash
 var fnames = { 'multikw-en': 'MHAN: en-de → en',
     	       'multikw-de': 'MHAN: en-de → de',
                'monokw-de': 'HAN: en,de → en' };
 ```
-4. Open index.html in a browser (recommended one is Firefox).
+4. Open explore.html in a browser (recommended one is Firefox).
 
 Note that when the visualization tool detects multiple json files with the same experiment name as above it assumes that they have been tested on the same test set for the target language and both of them are going to be visualized in the interface; this is mainly useful for displaying cross-lingual predictions. For instance, in the above example (step 3) the predicted tags will be displayed for both the English and the German models (along with their attention scores).
 
