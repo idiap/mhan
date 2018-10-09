@@ -389,7 +389,7 @@ References
 Acknowledgements
 ------------
  We are grateful for funding to the European Union's Horizon 2020 program through the SUMMA project (Research and Innovation Action, grant agreement n. 688139): Scalable Understanding of Multilingual Media, see <a href="http://www.summa-project.eu/">http://www.summa-project.eu/</a>. 
- 
+
 ## Contact:
 npappas@idiap.ch
 
