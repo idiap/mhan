@@ -7,12 +7,13 @@ This repository contains a Python implementation of Multilingual Hierarchical At
 
 ```
 @inproceedings{Pappas_IJCNLP_2017,
-  author    = {Nikolaos Pappas and Andrei Popescu-Belis},
-  title     = {Multilingual Hierarchical Attention Networks for Document Classification},
+  author    = {Pappas, Nikolaos  and  Popescu-Belis, Andrei},
+  booktitle = {Multilingual Hierarchical Attention Networks for Document Classification},
   journal   = {8th International Joint Conference on Natural Language Processing},
-  series    = {IJCNLP ’17},
-  address   = {Tapei, Taiwan}, 
-  year      = {2017}
+  address   = {Tapei, Taiwan},  
+  pages     = {1015--1025},
+  year      = {2017},
+  url       = {http://www.aclweb.org/anthology/I17-1102}
 }
 ```
 
