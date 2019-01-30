@@ -80,7 +80,11 @@ def fetch_data(urls, lang, vocab, ltype):
 		except:
 			pass
 		try:
-			body = soup.findAll("div", { "class" : "longText" })[0].text.lower()
+			region = soup.findAll("div", { "class" : "longText" })[0]
+    			related_stories = region.find('div', {'class':'gallery'})
+    			if related_stories is not None:    
+				related_stories.decompose() # remove related stories
+    			body = region.text.lower()
 		except:
 			pass
 		if title == "" and teaser == "" and body == "":
