@@ -31,7 +31,7 @@ $ pip install nltk==3.2
 $ pip install Theano==0.8.2
 $ pip install keras==1.2.2
 ```
-For setting up your GPUs to work with Theano please refer to <a href="http://deeplearning.net/software/theano/install_ubuntu.html">here</a> and  <a href="http://deeplearning.net/software/theano/tutorial/using_gpu.html">here</a>. For example, our configuration of theano running on GPUs with <a href="https://developer.nvidia.com/cuda-downloads">CUDA</a> and <a href="https://developer.nvidia.com/cudnn">cuDNN</a> was the following one: 
+For setting up your GPUs to work with Theano please refer to <a href="http://deeplearning.net/software/theano/install_ubuntu.html">here</a> and  <a href="http://deeplearning.net/software/theano/tutorial/using_gpu.html">here</a>. For example, our configuration of theano for running on GPUs with <a href="https://developer.nvidia.com/cuda-downloads">CUDA</a> and <a href="https://developer.nvidia.com/cudnn">cuDNN</a> was the following one: 
 ```
 THEANO_FLAGS='cuda.root=<path>/CUDA-7.5, mode=FAST_RUN, dnn.enabled=True, device=gpu, lib.cnmem=0.9'
 ```
