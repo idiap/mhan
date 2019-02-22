@@ -150,8 +150,8 @@ To train a model we have to specify the --train argument in the run.py file. For
 ### Monolingual models 
 For instance to train a mononolingual HAN with DENSE encoders on general German categories we execute the following command.
 ```
-$ python run.py --train --languages german --wordemb_path word_vectors/ --data_path=data/dw_general\
-  --path exp/bi-gen/mono/han-att --wdim 40 --swpad 30 --spad 30 --sdim 100 --ddim 100 --ep 10 --bs 16\ 
+$ python run.py --train --languages german --wordemb_path word_vectors/ --data_path=data/dw_general \
+  --path exp/bi-gen/mono/han-att --wdim 40 --swpad 30 --spad 30 --sdim 100 --ddim 100 --ep 10 --bs 16 \ 
   --enc attdense --act relu
 [*] Loading german word vectors...
         word_vectors/german.pkl                                    OK
@@ -178,8 +178,8 @@ Epoch 10/10
 ### Multilingual models 
 For instance to train a multilingual HAN with DENSE encoders and shared attention (MHAN-Att) on general English and German categories we execute the following command.
 ```
-$ python run.py --train --languages english german --wordemb_path word_vectors/ --data_path=data/dw_general\
---path exp/bi-gen/multi/en-de/mhan-att --wdim 40 --swpad 30 --spad 30 --sdim 100 --ddim 100 --ep 10 --bs 16\
+$ python run.py --train --languages english german --wordemb_path word_vectors/ --data_path=data/dw_general \
+--path exp/bi-gen/multi/en-de/mhan-att --wdim 40 --swpad 30 --spad 30 --sdim 100 --ddim 100 --ep 10 --bs 16 \
 --enc attdense --act relu --share att
 [*] Loading english word vectors...
 	word_vectors/english.pkl                                   OK
