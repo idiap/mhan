@@ -279,10 +279,15 @@ class MHAN:
 			name_satt = "%s_satt" % language
 			if len(self.args['languages']) > 1 and self.args['share'] != 'enc':
 				name_watt = "both_watt"
-				name_satt = "both_satt" 
+				name_satt = "both_satt"
 			if self.model.get_layer(name_watt) is not None:
-				watt = theano.function([self.model.layers[l].input], self.model.get_layer(name_watt).get_output_at(l), allow_input_downcast=True)
-				satt = theano.function([self.model.layers[l].input], self.model.get_layer(name_satt).get_output_at(l), allow_input_downcast=True)
+				outpos = l if name_watt.find('both') > -1 else 0
+				watt = theano.function([self.model.layers[l].input],
+                       					self.model.get_layer(name_watt).get_output_at(outpos),
+                       					allow_input_downcast=True)
+				satt = theano.function([self.model.layers[l].input],
+                       					self.model.get_layer(name_satt).get_output_at(outpos),
+                       					allow_input_downcast=True)
 				self.watts.append(watt)
 				self.satts.append(satt)
 
