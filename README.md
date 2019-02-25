@@ -148,7 +148,7 @@ Usage: Training
 -------------
 To train a model we have to specify the --train argument in the run.py file. For each specified language, the script will automatically load the training and validation sets stored under the specified data folder and train the model on them. At each epoch the script will store a snapshot of the model along with its validation scores (precision, recall and F1-score) under the specified folder for all the languages involved in the training e.g. under exp/<language_1>/, exp/<language_2>/. In case the script detects already stored models for multiple epochs in the specified folder, it will continue training from the model stored at the last epoch. The examples below were run on GPU with Keras==2.0.8, Theano==0.9.0, numpy==1.13.3, CUDA v8.0.44 and cuDNN 5110.
 ### Monolingual models 
-For instance to train a mononolingual HAN with DENSE encoders on general German categories we execute the following command.
+For instance, to train a mononolingual HAN with DENSE encoders on general German categories we execute the following command.
 ```
 $ python run.py --train --languages german --wordemb_path word_vectors/ --data_path=data/dw_general \
   --path exp/bi-gen/mono/han-att --wdim 40 --swpad 30 --spad 30 --sdim 100 --ddim 100 --ep 10 --bs 16 \ 
@@ -176,7 +176,7 @@ Epoch 10/10
 ...
 ```
 ### Multilingual models 
-For instance to train a multilingual HAN with DENSE encoders and shared attention (MHAN-Att) on general English and German categories we execute the following command.
+For instance, to train a multilingual HAN with DENSE encoders and shared attention (MHAN-Att) on general English and German categories we execute the following command.
 ```
 $ python run.py --train --languages english german --wordemb_path word_vectors/ --data_path=data/dw_general \
 --path exp/bi-gen/multi/en-de/mhan-att --wdim 40 --swpad 30 --spad 30 --sdim 100 --ddim 100 --ep 10 --bs 16 \
