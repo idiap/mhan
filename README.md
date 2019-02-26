@@ -287,7 +287,7 @@ $ python run.py --store_test --languages english german --max_num 500 --store_fi
 --path exp/bi-gen/mono/han-att --source german --target english
 ```
 
-Pre-trained word embeddings
+Pretrained word embeddings
 -------------
 The proposed models can function with any type of word embeddings, however we highly recommend to use an aligned space across languages for input which  significantly improves their performance. The provided word embeddings per language under word_vectors/ are 40-dimensional and they have been aligned across languages with multilingual-CCA on the Leipzig Corpora Collection by the authors of [<a href="https://arxiv.org/pdf/1602.01925.pdf">3</a>], so, if you use them please make sure you cite [<a href="https://arxiv.org/pdf/1602.01925.pdf">3</a>].  To obtain word vectors for more languages or of higher dimensionality (e.g. 500-d) or trained with another method, please check the data provided by the authors of [<a href="https://arxiv.org/pdf/1602.01925.pdf">3</a>].  For example, here are the links to their 40-d and 500-d embeddings based on multilingual CCA in 59 languages: 
 * 40-dimensional word vectors: <a href="http://wordvectors.org/trained-vecs/multilingual/fifty_nine.table5.multiCCA.size_40.normalized.gz">multiCCA (size=40)</a>
@@ -312,7 +312,7 @@ vector dims: 40
 array([ 0.22220001,  0.2454,  ... -0.0125,  0.0283], dtype=float32)
 ```
 
-Pre-trained hierarchical attention models
+Pretrained hierarchical attention models
 -------------
 Apart from the code, we also provide the configurations of the best-performing MHAN models from the full-resource experiments in [<a href="http://publications.idiap.ch/downloads/papers/2017/Pappas_IJCNLP_2017.pdf">1</a>] (Tables 1 and 2): 
 
