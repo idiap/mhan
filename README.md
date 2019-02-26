@@ -316,9 +316,9 @@ Pretrained hierarchical attention models
 -------------
 Apart from the code, we also provide the configurations of the best-performing MHAN models from the full-resource experiments in [<a href="http://publications.idiap.ch/downloads/papers/2017/Pappas_IJCNLP_2017.pdf">1</a>] (Tables 1 and 2): 
 
-1. **bi-gen/**: Multilingual models with DENSE encoders on general categories (Table 1, upper part).
-2. **bi-spe/**: Multilingual models with DENSE encoders on specific categories (Table 1, lower part). 
-3. **enc-gen/**: Multilingual models with varying encoders (DENSE, GRU, biGRU) on general categories (Table 2)
+1. **pretrained/bi-gen/**: Bilingual models with DENSE encoders on general categories (Table 1, upper part).
+2. **pretrained/bi-spe/**: Bilingual models with DENSE encoders on specific categories (Table 1, lower part). 
+3. **pretrained/enc-gen/**: Monolingual models with varying encoders (DENSE, GRU, biGRU) on general categories (Table 2)
 
 One can apply all the above functionalities using the pretrained models (--train, --test, --store_test). 
 
