@@ -38,7 +38,7 @@ THEANO_FLAGS='cuda.root=<path>/CUDA-7.5, mode=FAST_RUN, dnn.enabled=True, device
 
 Dataset
 -------------
-The evaluation of the MHAN models was done on a large dataset collected from Deutsche Welle, Germany’s public international broadcaster (dw.com). This dataset contains nearly 600,000 documents in 8 languages which are annotated by journalists with general and specific topic categories [<a href="http://publications.idiap.ch/downloads/papers/2017/Pappas_IJCNLP_2017.pdf">1</a>] (see Table 2). Respecting <a hre="http://www.dw.com/en/is-the-re-posting-of-articles-from-dwcom-permitted/a-3264678" target="_blank">Deutsche Welle's policy</a> we provide only the URLs of the news articles and not their entire content. To facilitate the download of the data and their pre-processing according to [<a href="http://publications.idiap.ch/downloads/papers/2017/Pappas_IJCNLP_2017.pdf">1</a>] we provide a crawling and pre-processing script file written in Python with name: fetch_data.py. The provided script has the following usage.
+The evaluation of the MHAN models was done on a large dataset collected from Deutsche Welle, Germany’s public international broadcaster (dw.com). This dataset contains nearly 600,000 documents in 8 languages which are annotated by journalists with general and specific topic categories [<a href="http://publications.idiap.ch/downloads/papers/2017/Pappas_IJCNLP_2017.pdf">1</a>] (see Table 2). Respecting <a hre="http://www.dw.com/en/is-the-re-posting-of-articles-from-dwcom-permitted/a-3264678" target="_blank">Deutsche Welle's policy</a> we provide only the URLs of the news articles and not their entire content. To facilitate the download of the data and their preprocessing according to [<a href="http://publications.idiap.ch/downloads/papers/2017/Pappas_IJCNLP_2017.pdf">1</a>] we provide a crawling and preprocessing script file written in Python with name: fetch_data.py. The provided script has the following usage.
 
 ```
 $ python fetch_data.py --h
@@ -56,7 +56,7 @@ optional arguments:
                      language (e.g. english.pkl, etc).
   --ltype LTYPE      Type of the categories: specific (kw) or general (rou).
 ``` 
-For example, to download and pre-process the data for the general German categories used in [<a href="http://publications.idiap.ch/downloads/papers/2017/Pappas_IJCNLP_2017.pdf">1</a>] the command should be the one that follows. The corresponding command should be run for all the combinations of languages, namely English, German, Spanish, Portuguese, Ukrainian, Russian, Arabic and Persian, and type of target categories, namely general and specific.  
+For example, to download and preprocess the data for the general German categories used in [<a href="http://publications.idiap.ch/downloads/papers/2017/Pappas_IJCNLP_2017.pdf">1</a>] the command should be the one that follows. The corresponding command should be run for all the combinations of languages, namely English, German, Spanish, Portuguese, Ukrainian, Russian, Arabic and Persian, and type of target categories, namely general and specific.  
 ```
 $ python fetch_data.py --lang german --urlpath data_urls/dw_general --outpath data/dw_general --ltype rou
 [*] Loading german word vectors...
@@ -218,7 +218,7 @@ Epoch 10/10
 
 Usage: Testing
 -------------
-To train a model we have to specify the --test argument in the run.py file and simply point to the directory of the model that we would like to evaluate and the language on which we would like to evaluate using the --target argument. The script will select the model with the best validation score in the specified directory and test it on the corresponding test set. When using the testing function, the architecture of the model is also plotted and stored in the specified directory (see below).
+To test a model we have to specify the --test argument in the run.py file and simply point to the directory of the model that we would like to evaluate and the language on which we would like to evaluate using the --target argument. The script will select the model with the best validation score in the specified directory and test it on the corresponding test set. When using the testing function, the architecture of the model is also plotted and stored in the specified directory (see below).
 ### Monolingual models 
 Using the previous example, we can test the above mononolingual HAN with DENSE encoders, which was trained on general German categories, on the German test set as follows. 
 ```
@@ -320,7 +320,7 @@ Apart from the code, we also provide the configurations of the best-performing M
 2. **bi-spe/**: Multilingual models with DENSE encoders on specific categories (Table 1, lower part). 
 3. **enc-gen/**: Multilingual models with varying encoders (DENSE, GRU, biGRU) on general categories (Table 2)
 
-One can apply all the above functionalities using the pre-trained models (--train, --test, --store_test). 
+One can apply all the above functionalities using the pretrained models (--train, --test, --store_test). 
 
 ### Testing
 The command below evaluates the English-German MHAN model with DENSE encoders on the English test set. The resulting F1-score should match exactly the one in the corresponding column of Table 2 in [<a href="http://publications.idiap.ch/downloads/papers/2017/Pappas_IJCNLP_2017.pdf">1</a>]. 
@@ -347,8 +347,8 @@ word_vectors/russian.pkl.gz
 [-] Finished.
 ``` 
 
-### Re-training
-To train the model from scratch using the same configuration (args.json) and initial weights as in [1], one has to simply remove the optimal pre-trained model files from the specified path folder as follows:
+### Retraining
+To train the model from scratch using the same configuration (args.json) and initial weights as in [1], one has to simply remove the optimal pretrained model files from the specified path folder as follows:
 
 ```
 $ rm  pretrained/bi-spe/multi/en-de/mhan-att/english/*_[1-9]*-* 
