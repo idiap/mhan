@@ -301,7 +301,7 @@ class MHAN:
 		if args['seed'] is not None:
 			np.random.seed(self.args['seed'])
 		for e in range(self.args['ep']):
-			if resume_epoch > 0 and e < resume_epoch:
+			if resume_epoch > 1 and e < resume_epoch:
 				continue
 			print "\nEpoch %d/%d" % (e+1,self.args['ep'])
 			batch, elapsed, curbatch = 0, 0, 0
@@ -356,12 +356,13 @@ class MHAN:
 			cur_e = np.sort([int(f.split('_')[1].split('-')[0]) for f in fnames])[-1]
 			cur_idx = np.argsort([int(f.split('_')[1].split('-')[0]) for f in fnames])[-1]
 			resume_path = path + fnames[cur_idx]
-			self.model.load_weights(resume_path)
-			print "[*] Resuming from epoch %d... (%s)" % (cur_e+1, resume_path)
+			if cur_e > 0:
+				self.model.load_weights(resume_path)
+			print "[*] Resuming from epoch %d... (%s)" % (cur_e + 1, resume_path)
 			return resume_path, cur_e + 1
 		except:
 			print "[*] No stored model to resume from. "
-			return None, 0
+			return None, -1
 
 	def get_avgresults(self, preds, Y_vecs):
 		""" Return the average precision, recall and f-measure computed
