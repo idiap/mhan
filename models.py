@@ -362,7 +362,7 @@ class MHAN:
 			return resume_path, cur_e + 1
 		except:
 			print "[*] No stored model to resume from. "
-			return None, -1
+			return None, 0
 
 	def get_avgresults(self, preds, Y_vecs):
 		""" Return the average precision, recall and f-measure computed
