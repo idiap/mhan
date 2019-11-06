@@ -55,6 +55,16 @@ def get_label_counts(y_idxs, lang):
 				h[key] += 1
 	return h
 
+def re_index(Y, labels):
+	""" Re-indexes the target ids to match the label set """
+	for i,y in enumerate(Y):
+		label_ids = []
+		for j, label in enumerate(y):
+			str_label = '_'.join([str(wid) for wid in label])
+			label_ids.append(labels.index(str_label))
+		Y[i] = label_ids
+	return Y
+
 def fetch_data(urls, lang, vocab, ltype):
 	""" Fetches and pre-processes the specified URLs given 
 	    the provided vocabulary. """
@@ -152,8 +162,8 @@ if __name__ == "__main__":
 	print "[*] Fetching training data..."
 	urls_train = json.load(open(args.urlpath+'/train/%s.json' % args.lang))
 	X, Y = fetch_data(urls_train['urls'], args.lang, vocab, args.ltype)
-
 	yh = get_label_counts(Y+Y_dev+Y_test, args.lang)
+	Y = re_index(Y, yh.keys())
 	if not os.path.exists(args.outpath+'/dev'):
 	    os.makedirs(args.outpath+'/dev')
 	devfile = open(args.outpath+'/dev/%s.json' % args.lang, 'w')
