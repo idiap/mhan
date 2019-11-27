@@ -163,7 +163,9 @@ if __name__ == "__main__":
 	urls_train = json.load(open(args.urlpath+'/train/%s.json' % args.lang))
 	X, Y = fetch_data(urls_train['urls'], args.lang, vocab, args.ltype)
 	yh = get_label_counts(Y+Y_dev+Y_test, args.lang)
-	Y = re_index(Y, yh.keys())
+	Y = re_index(Y, yh.keys()) 
+	Y_dev = re_index(Y_dev, yh.keys())
+	Y_test = re_index(Y_test, yh.keys()) 
 	if not os.path.exists(args.outpath+'/dev'):
 	    os.makedirs(args.outpath+'/dev')
 	devfile = open(args.outpath+'/dev/%s.json' % args.lang, 'w')
